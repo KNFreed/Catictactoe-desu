@@ -1,12 +1,11 @@
 #########################################
-# Auteur : Frédéric Spataro le 04/11/18 #
+# Author : Frédéric Spataro le 04/11/18 #
 # OS Windows 10, Python 3.7.1 32 bits   #
 # Titre : CaTic Tac Toe Desu v1.0       #
-# Licence GPL                           #
 #########################################
 
 #########################################
-# Importation des librairies
+# Let's import the libraries
 
 from tkinter import *
 from PIL import ImageTk
@@ -15,7 +14,7 @@ from random import choice
 from winsound import *
 
 #########################################
-# Définitions des variables
+# Let's define the variables
 
 window = Tk()
 window.title('CaTic Tac Toe Desu')
@@ -38,7 +37,7 @@ v2=0
 v4=0
 
 #########################################
-# Définitions locales de fonctions
+# More definitions
 
 def menu():
      def jeu():
@@ -59,7 +58,7 @@ def menu():
                               buttons["text"] = "O"
                               tour = True
                          else:
-                              messagebox.showinfo("Case occupée","Case déjà occupée, merci d'en choisir une autre.")
+                              messagebox.showinfo("Case already filled","Case already filled, please choose another one.")
 
 
                          if(button1['text'] == 'X' and button2['text'] == 'X' and button3['text'] == 'X'or
@@ -71,7 +70,7 @@ def menu():
                               button2['text'] == 'X' and button5['text'] == 'X' and button8['text'] == 'X'or
                               button3['text'] == 'X' and button6['text'] == 'X' and button9['text'] == 'X'):
                               v1=v1+1
-                              reponse = messagebox.askyesno("Fin","Le joueur 1 a gagné. Voulez-vous rejouer ?\nScore:\nJoueur 1: {}\nJoueur 2: {}".format(v1,v2))
+                              reponse = messagebox.askyesno("End","Player 1 won. Do you want to play again?\nScore:\nPlayer 1: {}\nPlayer 2: {}".format(v1,v2))
                               if reponse == True:
                                    jeua2()
                               else:
@@ -88,7 +87,7 @@ def menu():
                               button2['text'] == 'O' and button5['text'] == 'O' and button8['text'] == 'O'or
                               button3['text'] == 'O' and button6['text'] == 'O' and button9['text'] == 'O'):
                               v2=v2+1
-                              reponse = messagebox.askyesno("Fin","Le joueur 2 a gagné. Voulez-vous rejouer ?\nScore:\nJoueur 1: {}\nJoueur 2: {}".format(v1,v2))
+                              reponse = messagebox.askyesno("End","Player 2 won. Do you want to play again?\nScore:\nPlayer 1: {}\nPlayer 2: {}".format(v1,v2))
                               if reponse == True:
                                    jeua2()
                               else:
@@ -96,7 +95,7 @@ def menu():
                                    v2=0
                                    quitterm()
                          elif (button1['text'] != ' ' and button2['text'] != ' ' and button3['text'] != ' ' and button4['text'] != ' ' and button5['text'] != ' ' and button6['text'] != ' ' and button7['text'] != ' ' and button8['text'] != ' ' and button9['text'] != ' '):
-                              reponse = messagebox.askyesno("Fin","Égalité, personne n'a gagné. Voulez-vous rejouer ?\nScore:\nJoueur 1: {}\nJoueur 2: {}".format(v1,v2))
+                              reponse = messagebox.askyesno("End","Tie, no one won. Do you want to play again?\nScore:\nPlayer 1: {}\nPlayer 2: {}".format(v1,v2))
                               if reponse == True:
                                    jeua2()
                               else:
@@ -184,7 +183,7 @@ def menu():
                                    button3['text'] == 'X' and button6['text'] == 'X' and button9['text'] == 'X'):
                                    v1=v1+1
                                    PlaySound('victoire.wav', SND_FILENAME)
-                                   reponse = messagebox.askyesno("Fin","Vous avez gagné. Voulez-vous rejouer ?\nScore:\nJoueur 1: {}\nJoueur 2: {}".format(v1,v2))
+                                   reponse = messagebox.askyesno("End","You won. Do you want to play again?\nScore:\nPlayer 1: {}\nPlayer 2: {}".format(v1,v2))
                                    if reponse == True:
                                         jeusolo()
                                    else:
@@ -195,7 +194,7 @@ def menu():
 
                               elif (button1['text'] != ' ' and button2['text'] != ' ' and button3['text'] != ' ' and button4['text'] != ' ' and button5['text'] != ' ' and button6['text'] != ' ' and button7['text'] != ' ' and button8['text'] != ' ' and button9['text'] != ' '):
                                    v4 =v4+1
-                                   reponse = messagebox.askyesno("Fin","Égalité, personne n'a gagné. Voulez-vous rejouer ?\nScore:\nJoueur 1: {}\nJoueur 2: {}".format(v1,v2))
+                                   reponse = messagebox.askyesno("End","Tie, no one won. Do you want to play again?\nScore:\nPlayer 1: {}\nBot: {}".format(v1,v2))
                                    if reponse == True:
                                         jeusolo()
                                    else:
@@ -215,7 +214,7 @@ def menu():
                                    button2['text'] == 'O' and button5['text'] == 'O' and button8['text'] == 'O'or
                                    button3['text'] == 'O' and button6['text'] == 'O' and button9['text'] == 'O'):
                                    v2=v2+1
-                                   reponse = messagebox.askyesno("Fin","Le bot a gagné. Voulez-vous rejouer ?\nScore:\nJoueur 1: {}\nJoueur 2: {}".format(v1,v2))
+                                   reponse = messagebox.askyesno("End","Bot won. Do you want to play again ?\nScore:\nPlayer 1: {}\nBot: {}".format(v1,v2))
                                    if reponse == True:
                                         jeusolo()
                                    else:
@@ -225,21 +224,21 @@ def menu():
                                         quitterm()
 
                          def bot():
-                              #atq lignes
+                              #atq lines
                               if button1['text'] == 'O' and button2['text'] == 'O' and button3['text'] == ' ':
                                    button3['text'] = 'O'
                               elif button4['text'] == 'O' and button5['text'] == 'O' and button6['text'] == ' ':
                                    button6['text'] = 'O'
                               elif button7['text'] == 'O' and button8['text'] == 'O' and button9['text'] == ' ':
                                    button9['text'] = 'O'
-                              #atq colonnes
+                              #atq columns
                               elif button1['text'] == 'O' and button4['text'] == 'O' and button7['text'] == ' ':
                                    button7['text'] = 'O'
                               elif button2['text'] == 'O' and button5['text'] == 'O' and button8['text'] == ' ':
                                    button8['text'] = 'O'
                               elif button3['text'] == 'O' and button6['text'] == 'O' and button9['text'] == ' ':
                                    button9['text'] = 'O'
-                              #atq diagonales
+                              #atq diagonals
                               elif button1['text'] == 'O' and button5['text'] == 'O' and button9['text'] == ' ':
                                    button9['text'] = 'O'
                               elif button3['text'] == 'O' and button5['text'] == 'O' and button7['text'] == ' ':
@@ -263,83 +262,83 @@ def menu():
                                    button4['text'] = 'O'
                               elif button9['text'] == 'O' and button8['text'] == 'O' and button7['text'] == ' ':
                                    button7['text'] = 'O'
-                              #atq creux lignes
+                              #atq li2
                               elif button1['text'] == 'O' and button3['text'] == 'O' and button2['text'] == ' ':
                                    button2['text'] = 'O'
                               elif button4['text'] == 'O' and button6['text'] == 'O' and button5['text'] == ' ':
                                    button5['text'] = 'O'
                               elif button7['text'] == 'XO' and button9['text'] == 'O' and button8['text'] == ' ':
                                    button8['text'] = 'O'
-                              #atq creux colonnes
+                              #atq col2
                               elif button1['text'] == 'O' and button7['text'] == 'O' and button4['text'] == ' ':
                                    button4['text'] = 'O'
                               elif button2['text'] == 'O' and button8['text'] == 'O' and button5['text'] == ' ':
                                    button5['text'] = 'O'
                               elif button3['text'] == 'O' and button9['text'] == 'O' and button6['text'] == ' ':
                                    button6['text'] = 'O'
-                              #atq creux diag
+                              #atq diag2
                               elif button1['text'] == 'O' and button9['text'] == 'O' and button5['text'] == ' ':
                                    button5['text'] = 'O'
                               elif button3['text'] == 'O' and button7['text'] == 'O' and button5['text'] == ' ':
                                    button5['text'] = 'O'
-                              #bloquer lignes
+                              #block li
                               elif button1['text'] == 'X' and button2['text'] == 'X' and button3['text'] == ' ':
                                    button3['text'] = 'O'
                               elif button4['text'] == 'X' and button5['text'] == 'X' and button6['text'] == ' ':
                                    button6['text'] = 'O'
                               elif button7['text'] == 'X' and button8['text'] == 'X' and button9['text'] == ' ':
                                    button9['text'] = 'O'
-                              #bloquer colonnes
+                              #blocl col
                               elif button1['text'] == 'X' and button4['text'] == 'X' and button7['text'] == ' ':
                                    button7['text'] = 'O'
                               elif button2['text'] == 'X' and button5['text'] == 'X' and button8['text'] == ' ':
                                    button8['text'] = 'O'
                               elif button3['text'] == 'X' and button6['text'] == 'X' and button9['text'] == ' ':
                                    button9['text'] = 'O'
-                              #bloquer diagonales
+                              #block diag
                               elif button1['text'] == 'X' and button5['text'] == 'X' and button9['text'] == ' ':
                                    button9['text'] = 'O'
                               elif button3['text'] == 'X' and button5['text'] == 'X' and button7['text'] == ' ':
                                    button7['text'] = 'O'
-                              #bloquer invdiag
+                              #block invdiag
                               elif button9['text'] == 'X' and button5['text'] == 'X' and button1['text'] == ' ':
                                    button1['text'] = 'O'
                               elif button7['text'] == 'X' and button5['text'] == 'X' and button3['text'] == ' ':
                                    button3['text'] = 'O'
-                              #bloquer invcol
+                              #block invcol
                               elif button7['text'] == 'X' and button4['text'] == 'X' and button1['text'] == ' ':
                                    button1['text'] = 'O'
                               elif button8['text'] == 'X' and button5['text'] == 'X' and button2['text'] == ' ':
                                    button2['text'] = 'O'
                               elif button9['text'] == 'X' and button6['text'] == 'X' and button3['text'] == ' ':
                                    button3['text'] = 'O'
-                              #bloquer invli
+                              #block invli
                               elif button3['text'] == 'X' and button2['text'] == 'X' and button1['text'] == ' ':
                                    button1['text'] = 'O'
                               elif button6['text'] == 'X' and button5['text'] == 'X' and button4['text'] == ' ':
                                    button4['text'] = 'O'
                               elif button9['text'] == 'X' and button8['text'] == 'X' and button7['text'] == ' ':
                                    button7['text'] = 'O'
-                              #bloquer creux lignes
+                              #block li2
                               elif button1['text'] == 'X' and button3['text'] == 'X' and button2['text'] == ' ':
                                    button2['text'] = 'O'
                               elif button4['text'] == 'X' and button6['text'] == 'X' and button5['text'] == ' ':
                                    button5['text'] = 'O'
                               elif button7['text'] == 'X' and button9['text'] == 'X' and button8['text'] == ' ':
                                    button8['text'] = 'O'
-                              #bloquer creux colonnes
+                              #block col2
                               elif button1['text'] == 'X' and button7['text'] == 'X' and button4['text'] == ' ':
                                    button4['text'] = 'O'
                               elif button2['text'] == 'X' and button8['text'] == 'X' and button5['text'] == ' ':
                                    button5['text'] = 'O'
                               elif button3['text'] == 'X' and button9['text'] == 'X' and button6['text'] == ' ':
                                    button6['text'] = 'O'
-                              #bloquer creux diag
+                              #block diag2
                               elif button1['text'] == 'X' and button9['text'] == 'X' and button5['text'] == ' ':
                                    button5['text'] = 'O'
                               elif button3['text'] == 'X' and button7['text'] == 'X' and button5['text'] == ' ':
                                    button5['text'] = 'O'
-                              #bloquer au début
+                              #bloquer at start
                               elif button5['text'] == ' ' and (button1['text'] == 'X' or button3['text'] == 'X' or button7['text'] == 'X' or button9['text'] == 'X'):
                                    button5['text'] = 'O'
                               else:
@@ -357,7 +356,7 @@ def menu():
                                   buttons["text"] = "X"
                                   v6=0
                               else:
-                                   messagebox.showinfo("Case occupée","Case déjà occupée, merci d'en choisir une autre.")
+                                   messagebox.showinfo("Case already filled","Case already filled, please choose another one.")
                                    v6=1
                          jjeu()
                          verifjoueur()
@@ -448,7 +447,7 @@ def menu():
      button3.place(relx=1.0, rely=0, anchor=NE)
 
 ##############################################
-# Corps principal du programme
+# Let the game begin.
 
 menu()
 window.mainloop()
