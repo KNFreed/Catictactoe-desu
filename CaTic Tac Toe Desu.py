@@ -1,5 +1,5 @@
 #########################################
-# Author : Frédéric Spataro le 04/11/18 #
+# Author : Frédéric Spataro             #
 # OS Windows 10, Python 3.7.1 32 bits   #
 # Titre : CaTic Tac Toe Desu v1.0       #
 #########################################
