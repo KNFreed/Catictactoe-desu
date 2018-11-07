@@ -1,5 +1,5 @@
 # Catictactoe-desu
-A cute Catgirl Tic Tac Toe in Python
+A cute Catgirl Tic Tac Toe in Python using tkinter and pillow.
 
 Don't forget to install *Pillow* before lauching the *.py* by goig to "Your python directory/scripts" and execute *pip install pillow* in the command prompt.
 
