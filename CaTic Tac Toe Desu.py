@@ -182,7 +182,7 @@ def menu():
                                    button2['text'] == 'X' and button5['text'] == 'X' and button8['text'] == 'X'or
                                    button3['text'] == 'X' and button6['text'] == 'X' and button9['text'] == 'X'):
                                    v1=v1+1
-                                   PlaySound('victoire.wav', SND_FILENAME)
+                                   PlaySound('./stuff/victoire.wav', SND_FILENAME)
                                    reponse = messagebox.askyesno("End","You won. Do you want to play again?\nScore:\nPlayer 1: {}\nPlayer 2: {}".format(v1,v2))
                                    if reponse == True:
                                         jeusolo()
